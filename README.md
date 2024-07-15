@@ -9,17 +9,23 @@ The resource monitoring logic will be accomplished using a Bash Script, and the 
  
  The script is named aws_resource_tracker.sh
  To start, use: 
-$ vim aws_resource_tracker.sh 
+ ```bash
+$ vim aws_resource_tracker.sh
+```
 
 
 To add the cronjob, follow the following steps: 
+```bash
 #configure the email settings of your vm
 $apt-get update
 $apt-get install mailutils
+```
 
 
 edit the cron file using this command:
+```bash
 $ crontab -e
 0 7 * * * /root/aws_resource_tracker.sh | mail -s "Daily AWS Resource tracker' >
+```
 
 #this will ensure the script aws_resource_tracker run 7am everrday and sends the output to my email.
